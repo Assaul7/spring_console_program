@@ -1,0 +1,23 @@
+<configuration>
+    <!-- 控制台日志输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 设置全局日志级别为 ERROR，只记录错误级别的日志 -->
+    <root level="ERROR">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <!-- 禁用 MyBatis, HikariCP, MySQL JDBC 驱动, Java 网络接口, 和 Spring Boot 启动信息的日志输出 -->
+    <logger name="org.apache.ibatis" level="OFF"/>
+    <logger name="com.zaxxer.hikari" level="OFF"/>
+    <logger name="com.mysql.cj" level="OFF"/>
+    <logger name="java.net" level="OFF"/>
+    <logger name="org.springframework.boot" level="OFF"/>
+    <!-- 禁用 MyBatis 及其相关组件的日志输出 -->
+    <logger name="org.apache.ibatis" level="OFF"/>
+    <logger name="org.mybatis.spring" level="OFF"/>
+</configuration>
